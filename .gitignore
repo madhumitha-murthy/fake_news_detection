@@ -1,0 +1,31 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.xlsx
+
+# Model outputs
+models/
+
+
+
+# Mac
+.DS_Store
+
+# Environment files
+.env
+
+# Claude Code
+CLAUDE.mdCLAUDE.md
+models/
+*.csv
+__pycache__/
+CLAUDE.md

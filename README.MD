@@ -143,15 +143,15 @@ Pre-trained on 2.5TB of filtered CommonCrawl data across 100 languages using a j
 
 ## Dataset
 
-Provided by the shared task organisers and **not included in this repository**. To reproduce results, request the data from the [DravidianLangTech@EACL 2024 shared task page](https://sites.google.com/view/dravidianlangtech-2024) and place files as follows:
+Provided by the shared task organisers and included in this repository.
 
 ```
-task1/data/train.csv
-task1/data/dev.csv
-task1/data/test.csv
+task1/data/train.csv          # 3,257 labelled training samples
+task1/data/dev.csv            # 815 development samples
+task1/data/test.csv           # 1,019 unlabelled test samples
 
-task2/data/train_data_mal_fake_detect.csv
-task2/data/test-data.csv
+task2/data/Task2_Train.xlsx   # 1,669 labelled training samples
+task2/data/Task2_test.xlsx    # unlabelled test samples
 ```
 
 **Task 1 — Data distribution:**
@@ -189,9 +189,15 @@ fake-news-detection/
 │   └── Task2.ipynb               # Interactive multi-class workflow
 │
 ├── task1/                        # Binary fake detection (Fake / Original)
-│   ├── data/                     # CSVs — git-ignored, see Dataset section
+│   ├── data/
+│   │   ├── train.csv             # 3,257 labelled training samples
+│   │   ├── dev.csv               # 815 development samples
+│   │   └── test.csv              # 1,019 unlabelled test samples
 │   ├── models/                   # Saved checkpoints — git-ignored
-│   ├── outputs/                  # Submission CSVs — git-ignored
+│   ├── outputs/
+│   │   ├── TechWhiz_task1_xlmr.csv
+│   │   ├── TechWhiz_task1_mbert.csv
+│   │   └── TechWhiz_task1_albert.csv
 │   ├── results/                  # Evaluation heatmaps and confusion matrices
 │   └── src/
 │       ├── preprocess.py         # Text cleaning
@@ -200,9 +206,14 @@ fake-news-detection/
 │       └── predict.py            # Generate test-set predictions; exposes predict_single()
 │
 ├── task2/                        # Multi-class fake category detection (5 classes)
-│   ├── data/                     # CSVs — git-ignored
+│   ├── data/
+│   │   ├── Task2_Train.xlsx      # 1,669 labelled training samples
+│   │   └── Task2_test.xlsx       # unlabelled test samples
 │   ├── models/                   # Saved checkpoints — git-ignored
-│   ├── outputs/                  # Submission CSVs — git-ignored
+│   ├── outputs/
+│   │   ├── TechWhiz_task2_xlmr.tsv
+│   │   ├── TechWhiz_task2_mbert.tsv
+│   │   └── TechWhiz_task2_bert.tsv
 │   ├── results/                  # Evaluation heatmaps and confusion matrices
 │   └── src/
 │       ├── config.py             # Shared MODEL_MAP (mbert, xlmr)
